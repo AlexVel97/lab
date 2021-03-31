@@ -1,0 +1,287 @@
+<html>
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+
+	<title>Лабораторная работа № 2 «Знакомство с системой контроля версий Git»</title>
+
+	<link rel="stylesheet" href="/css/normalize.css">
+	<link rel="stylesheet" href="/css/style.css">
+
+	<script src="/js/jquery-1.4.3.min.js"></script>
+</head>
+
+<body>
+
+	<div class="page-wrapper">
+
+		<header class="main-header">
+			<h1><a href="/ti/">Дисциплина<br>&laquo;Технологии Интернет&raquo;</a></h1>
+
+			<h2>Лабораторная работа &#8470;&nbsp;2<br>&laquo;Знакомство с&nbsp;системой контроля версий Git&raquo;</h2>
+
+			<!-- <a class="go-back" href="/ti/">
+				<img src="/o/back.png" alt="Вернуться"><br>
+				<small>Вернуться</small>
+			</a> -->
+		</header>
+
+		<main class="main-content">
+<p><b>Цель работы:</b> знакомство с&nbsp;системой контроля версий Git и&nbsp;сервисом GitHub.</p>
+
+<h3 class="lab-section-title top_margin_25">Теоретический материал</h3>
+
+<div class="lab-section">
+	
+	<h4>Система контроля версий Git.</h4>
+
+	<p><b>Git</b>&nbsp;&mdash; распределённая система контроля версий, позволяющая сохранять изменения, внесённые в&nbsp;файлы, которые хранятся в&nbsp;репозитории. Сами изменения сохраняются в&nbsp;виде снимков, называемых коммитами.</p>
+
+	<p>Сайт: <a href="https://git-scm.com/" target="_blank">git-scm.com</a></p>
+
+	<hr>
+
+	<p><b>Файлы в&nbsp;Git-репозитории могут находиться в&nbsp;трёх состояниях:</b></p>
+
+	<ol>
+		<li>Файл не&nbsp;отслеживается (файл создан и&nbsp;просто лежит).</li>
+		<li>Файл в&nbsp;индексе гита (гит следит за&nbsp;изменениями в&nbsp;этом файле).</li>
+		<li>Файл сохранён в&nbsp;коммите (контрольной точке, созданной гитом).</li>
+	</ol>
+
+	<hr>
+
+	<p><b>Команды Git для начала работы:</b></p>
+
+	<p>(квадратные скобки опускаются, данные в них нужно заменить на свои)</p>
+
+	<p class="top_margin_30">Конфигурация Git:</p>
+
+	<ol>
+		<li>
+			<p>Рекомендуется использовать глобальную настройку:</p>
+			<p>
+				<code>git config --global user.name "[ваше имя]"</code> <br>
+				<code>git config --global user.email "[ваш email]"</code>
+			</p>
+		</li>
+
+		<li>
+			<p>Но&nbsp;также можно настроить конфиг только для текущей папки:</p>
+			<p>
+				<code>git config --local user.name "[ваше имя]"</code> <br>
+				<code>git config --local user.email "[ваш email]"</code>
+			</p>
+		</li>
+	</ol>
+
+	<p class="top_margin_30">Инициализация репозитория в&nbsp;текущей папке: <code>git init</code></p>
+
+	<p>Узнать состояние репозитория: <code>git status</code></p>
+
+	<p>Добавление файлов в&nbsp;индекс:</p>
+
+	<ol>
+		<li>
+			<p>Добавить все файлы в&nbsp;индекс (равнозначные команды):</p>
+			<p>
+				<code>git add .</code> <br>
+				<code>git add -A</code>
+			</p>
+		</li>
+
+		<li>
+			<p>Добавить в&nbsp;индекс конкретные файлы (через пробел):</p>
+			<p><code>git add [имя файла] [имя файла] [имя файла]</code></p>
+		</li>
+
+		<li>
+			<p>Добавить в&nbsp;индекс все файлы с&nbsp;определённым разрешением, например, все файлы css:</p>
+			<p><code>git add *.css</code></p>
+		</li>
+	</ol>
+
+	<p class="top_margin_30">Создание коммита (добавит в&nbsp;коммит файлы из&nbsp;индекса):</p>
+	<p><code>git commit -m 'сообщение коммита'</code></p>
+
+	<p class="top_margin_30">Вывод истории коммитов: <code>git log</code></p>
+
+	<p>Показать последний коммит: <code>git log -1</code></p>
+
+	<p class="top_margin_30"></p>
+	<p><code></code></p>
+
+	<hr>
+
+	<h4>GitHub.</h4>
+
+	<p><b><a href="https://github.com/" target="_blank">GitHub</a></b>&nbsp;&mdash; крупнейший веб-сервис для хостинга IT-проектов и&nbsp;их&nbsp;совместной разработки.</p>
+
+	<p>Позволяет работать с&nbsp;удалёнными репозиториями&nbsp;&mdash; версиями вашего проекта, сохранёнными в&nbsp;интернете.</p>
+
+	<p class="top_margin_30">Добавление удалённого репозитория:</p>
+	<p><code>git remote add origin [ссылка на удалённый репозиторий]</code></p>
+
+	<p class="top_margin_30">Отправка всех коммитов в&nbsp;удалённый репозиторий:</p>
+	<p>
+		<code>git push -u origin master</code> <br>
+		затем можно просто: <code>git push</code>
+	</p>
+
+	<p class="top_margin_30">Клонирование удалённого репозитория на&nbsp;комп:</p>
+	<p><code>git clone [ссылка на удалённый репозиторий]</code></p>
+
+	<p class="top_margin_30">Подтянуть изменения из&nbsp;удалённого репозитория:</p>
+	<p><code>git pull</code></p>
+
+	<p class="top_margin_30">Для указания файлов, которые не&nbsp;нужно загружать в&nbsp;удалённый репозиторий, используется файл <b>.gitignore</b>. Как его заполнять, погуглите :)</p>
+
+	<p></p>
+	<p><code></code></p>
+
+	<p></p>
+	<p><code></code></p>
+
+	<p></p>
+	<p><code></code></p>
+
+	<hr>
+
+	<h4>Полезные ресурсы для знакомства с&nbsp;гитом:</h4>
+
+	<ul>
+		<li><a href="https://htmlacademy.ru/blog/boost/frontend/git-console" target="_blank">Работа с&nbsp;Git через консоль</a></li>
+		<li><a href="https://nuancesprog.ru/p/3598/" target="_blank">Основы Git за&nbsp;5&nbsp;минут</a></li>
+		<li><a href="https://zen.yandex.ru/media/nuancesprog/znakomstvo-s-git-i-github-rukovodstvo-dlia-nachinaiuscih-5ec2cba7a0033d1da2fb37db" target="_blank">Знакомство с&nbsp;Git и&nbsp;GitHub: руководство для начинающих</a></li>
+		<li><a href="https://github.com/nicothin/web-development/blob/master/git/readme.md" target="_blank">Шпаргалка по&nbsp;консольным командам Git</a></li>
+		<li><a href="https://dev.to/nyxtom/top-10-git-commands-everyone-should-know-57e0" target="_blank">Top 10&nbsp;git commands everyone should know </a></li>
+	</ul>		
+
+	<h4 class="top_margin_30">Для более глубокого погружения:</h4>
+
+	<ul>
+		<li><a href="https://ru.hexlet.io/courses/intro_to_git/" target="_blank">Введение в&nbsp;Git&nbsp;&mdash; курс на&nbsp;Hexlet</a></li>
+		<li><a href="https://githowto.com/ru" target="_blank">Git How&nbsp;To: курс обучения Git на&nbsp;русском</a></li>
+		<li><a href="https://learngitbranching.js.org/?locale=ru_RU" target="_blank">Learn Git Branching (тренажёр по&nbsp;ветвлениям на&nbsp;русском)</a></li>
+		<li><a href="https://www.madebymike.com.au/writing/how-to-git/" target="_blank">Git from Beginner to&nbsp;Advanced&nbsp;&mdash; MadeByMike</a></li>
+	</ul>
+
+</div>
+
+<h3 class="lab-section-title">Выполнение работы</h3>
+
+<div class="lab-section">
+
+	<ol>
+		<li>
+			<p>Установите Git на&nbsp;свой компьютер: <a href="https://git-scm.com/" target="_blank">git-scm.com</a></p>
+
+			<hr>
+		</li>
+
+		<li>
+			<p>Настройте конфигурацию Git с&nbsp;помощью команды <code>git config</code></p>
+
+			<hr>
+		</li>
+
+		<li>
+			<p>Создайте папку, в&nbsp;которой будет храниться проект, и&nbsp;с&nbsp;помощью команды <code>git init</code> инициализируйте в&nbsp;ней локальный репозиторий.</p>
+
+			<hr>
+		</li>
+
+		<li>
+			<p>Создайте в&nbsp;репозитории несколько текстовых файлов.</p>
+
+			<hr>
+		</li>
+
+		<li>
+			<p>Введите команду <code>git status</code> &mdash; вы&nbsp;должны увидеть, что в&nbsp;репозитории появились неотслеживаемые файлы.</p>
+
+			<p>Добавьте их&nbsp;в&nbsp;индекс с&nbsp;помощью команды <code>git add</code></p>
+
+			<p>С&nbsp;помощью команды <code>git status</code> убедитесь, что файлы добавились в&nbsp;индекс.</p>
+
+			<hr>
+		</li>
+
+		<li>
+			<p>Сделайте первый коммит (с&nbsp;помощью команды <code>git commit</code>). В&nbsp;качестве сообщения коммита используйте осмысленное предложение, например, <code>'my first commit'</code>. Писать можно и&nbsp;по-русски. Обычно в&nbsp;компаниях существуют свои соглашения о&nbsp;стиле написания сообщений коммитов. Чаще всего сообщения пишутся по-английски.</p>
+			<p>С&nbsp;помощью команды <code>git status</code> убедитесь, что всё прошло хорошо, и&nbsp;изменений больше нет.</p>
+
+			<hr>
+		</li>
+
+		<li>
+			<p>Внесите изменения в&nbsp;текстовые файлы. Повторите шаги 5&ndash;6.</p>
+			<p>Рекомендуется делать коммиты после завершения каждой задачи. Чем чаще, тем лучше :) Коммиту должно быть легко дать имя по конкретной выполненной задаче.</p>
+
+			<hr>
+		</li>
+
+		<li>
+			<p>Зарегистрируйтесь на&nbsp;<a href="https://github.com/" target="_blank">GitHub</a>.</p>
+
+			<hr>
+		</li>
+
+		<li>
+			<p>Создайте новый репозиторий (имя лучше выбрать такое&nbsp;же, как у&nbsp;вашего локального проекта).</p>
+
+			<hr>
+		</li>
+
+		<li>
+			<p>Свяжите ваш локальный репозиторий с&nbsp;удалённым репозиторием на&nbsp;GitHub:</p>
+
+			<code>git remote add origin [ссылка на удалённый репозиторий]</code>
+
+			<hr>
+		</li>
+
+		<li>
+			<p>С&nbsp;помощью команды <code>push</code> залейте локальный репозиторий на&nbsp;GitHub.</p>
+
+			<hr>
+		</li>
+
+		<li>
+			<p>Скиньте ссылку на&nbsp;GitHub-репозиторий в&nbsp;канал #github в&nbsp;дискорде.</p>
+
+			<hr>
+		</li>
+
+	</ol>
+
+</div>
+
+<!-- <h3 class="lab-section-title">Отчёт по&nbsp;лабораторной работе</h3>
+
+<div class="lab-section">
+
+	<p></p>
+
+</div> -->
+
+<!-- <a class="next-lab" href="/ti/lab/2021/lab2/">К&nbsp;лабораторной работе &#8470;&nbsp;2</a> -->
+
+
+	</main>
+
+	<footer class="inner-footer">
+		<a href="https://mf.bmstu.ru" target="_blank">mf.bmstu.ru</a>
+	</footer>	
+</div> 
+</body>
+</html>
+
+<script>
+	$(".lab-section").hide();
+	$(".lab-section-title").click(function(){
+		$(this).next().slideToggle();
+		$(this).toggleClass("lab-section-title__active");
+	});
+</script>
