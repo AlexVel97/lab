@@ -14,16 +14,7 @@ img{
   max-width: 100%;
   height: auto;
 }
-@media (max-width: 420px) {
-  .heading {
-    font-size: 24px;
-  }
-}
-@media (max-width: 768px) {
-  .heading {
-    font-size: 36px;
-  }
-}
+
 .container {
   max-width: 928px;
   margin: 0 auto;
@@ -48,7 +39,9 @@ img{
   background-repeat: no-repeat;
   background-position: left;
 }
-
+.page-header a:first-child {
+  margin-left: 0;
+  }
 .header-email {
   padding-left: 30px;
   background-image: url("img/icon-email.svg");
@@ -128,10 +121,10 @@ img{
   background-image: url("img/icon-css.svg");
 }
 .skill-php {
-  background-image: url("img/php.jpg");
+  background-image: url("img/php_PNG12.png");
 }
 .skill-py {
-  background-image: url("img/python.jpg");
+  background-image: url("img/python.svg");
 }
 .level {
   margin: 4px 0 16px;
@@ -205,4 +198,14 @@ img{
 .footer-phone {
   padding-left: 25px;
   background-image: url("img/icon-phone.svg");
+}
+@media (max-width: 420px) {
+  .heading,.subheading {
+    font-size: 24px;
+  }
+}
+@media (max-width: 768px) {
+  .heading, .subheading {
+    font-size: 36px;
+  }
 }
