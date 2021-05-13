@@ -30,7 +30,6 @@ img{
 .page-footer .container {
   max-width: 1400px;
   text-align: right;
-  display: inline-block;
 }
 
 .page-header a {
@@ -39,6 +38,7 @@ img{
   text-decoration: none;
   background-repeat: no-repeat;
   background-position: left;
+  display: inline-block;
 }
 .page-header a:first-child {
   margin-left: 0;
