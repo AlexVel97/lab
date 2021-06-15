@@ -21,5 +21,7 @@ function insert_skills() {
     dl.append(dt);
     dl.append(dd);
   });
-  document.getElementById('skills').append(dl);
+  document.querySelector('.skills');
  }
+
+ insert_skills();
