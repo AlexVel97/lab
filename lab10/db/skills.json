@@ -1,0 +1,6 @@
+[
+    {"css_class": "skill-html", "name": "HTML", "level": 70},
+    {"css_class": "skill-css", "name": "CSS", "level": 40},
+    {"css_class": "skill-py", "name": "Python", "level": 30},
+    {"css_class": "skill-php", "name": "PHP", "level": 25}
+]
