@@ -21,6 +21,6 @@ function insert_skills() {
  fetch('db/skills.json')
   .then(data => data.json())
   .then(json => { 
-    console.log(json); 
+    console.insert_skills(json); 
   })
   .catch(() => console.error("упс, что-то пошло не так"));
