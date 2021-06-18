@@ -1,5 +1,5 @@
    
-function insert_skills() {
+function insert_skills(skills) {
   const dl = document.createElement('dl');
   dl.classList.add('skills-list');
   skills.forEach(item => {
@@ -21,6 +21,6 @@ function insert_skills() {
  fetch('db/skills.json')
   .then(data => data.json())
   .then(json => { 
-    console.insert_skills(json); 
+  insert_skills(json); 
   })
   .catch(() => console.error("упс, что-то пошло не так"));
